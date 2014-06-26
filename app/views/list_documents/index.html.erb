@@ -7,9 +7,9 @@
         <%= label_tag("#{tag_name}_checkbox", "Include #{tag_name}s?") %>
         <div id="<%=tag_name%>Properties" style="display: none;">
           <ul>
-            <li><%= label_tag("#{tag_name}s_from", 'от', class: 'labelForParameter') %>
+            <li><%= label_tag("#{tag_name}s_from", 'от\t', class: 'labelForParameter') %>
               <div><%= text_field_tag("#{tag_name}s_from", 0, class: 'textFieldParameter') %></div></li>
-            <li><%= label_tag("#{tag_name}s_to", 'до', class: 'labelForParameter') %>
+            <li><%= label_tag("#{tag_name}s_to", 'до\t', class: 'labelForParameter') %>
               <div><%= text_field_tag("#{tag_name}s__to", nil, class: 'textFieldParameter') %></div></li>
           </ul>
         </div>

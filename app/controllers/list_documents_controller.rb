@@ -1,6 +1,9 @@
+require 'teamlab'
+
 class ListDocumentsController < ApplicationController
   include ListDocumentsHelper
-  before_action :set_list_document, only: [:show, :edit, :update, :destroy, :download]
+  before_action :set_list_document, only: [:show, :edit, :update, :destroy, :download, :upload_to_teamlab]
+  before_action :authenticate_to_teamlab, only: [:upload_to_teamlab]
 
   # GET /list_documents
   # GET /list_documents.json
@@ -67,6 +70,13 @@ class ListDocumentsController < ApplicationController
     send_file @list_document.attributes['path'], :type=>"application/xml", :x_sendfile=>true
   end
 
+  def upload_to_teamlab
+    file_id = Teamlab.files.upload_to_my_docs(@list_document.attributes['path']).body['response']['id']
+    respond_to do |format|
+      format.html { redirect_to Teamlab.files.generate_shared_link(file_id, 'ReadWrite').body['response']}
+    end
+  end
+
   def filter
     @list_documents ||= filter_documents(params)
     respond_to do |format|
@@ -83,5 +93,13 @@ class ListDocumentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_document_params
       params[:list_document]
+    end
+
+    def authenticate_to_teamlab
+      Teamlab.configure do |config|
+        config.server = TM_PORTAL
+        config.username = USERNAME
+        config.password = PASSWORD
+      end
     end
 end

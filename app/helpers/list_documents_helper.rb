@@ -1,5 +1,8 @@
 module ListDocumentsHelper
   TAGS = %w(paragraph table image shape chart group_shape column section formula)
+  TM_PORTAL = 'https://testinfo.teamlab.info'
+  USERNAME = 'alexeysemin88@gmail.com'
+  PASSWORD = '123456'
 
   def filter_documents(params)
     @list_documents = ListDocument.all.to_a

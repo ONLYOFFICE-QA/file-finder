@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
     member do
       get 'download'
+      get 'upload_to_teamlab'
     end
   end
 

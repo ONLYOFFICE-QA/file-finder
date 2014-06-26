@@ -1,6 +1,11 @@
 <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-  <td><%= link_to image_tag('download_button_animated.gif', class: 'list_item_image'), download_list_document_path(list_document), target: '_blank' %></td>
-  <td><p><%= list_document.attributes[:path] %></p></td>
+  <td>
+    <%= link_to image_tag('docx.png', class: 'listItemImage'), download_list_document_path(list_document), title: 'Download document', rel: 'tooltip', target: '_blank' %>
+    <%= link_to image_tag('TM_logo.png', class: 'listItemImage'), upload_to_teamlab_list_document_path(list_document), title: 'Upload to TeamLab.info', rel: 'tooltip', target: '_blank' %>
+  </td>
+  <td>
+    <p><%= list_document.attributes[:path] %></p>
+  </td>
   <td>
     <ul>
       <li>Параграфов: <%= list_document.attributes['tags']['paragraphs'] %></li>

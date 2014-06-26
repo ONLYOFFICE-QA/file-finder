@@ -6,6 +6,7 @@ gem 'rails', '4.1.1'
 
 gem 'bson_ext'
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
+gem 'teamlab', '~> 0.3.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
