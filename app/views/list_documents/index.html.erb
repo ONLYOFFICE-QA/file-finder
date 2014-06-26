@@ -1,0 +1,36 @@
+<h1>Documents list</h1>
+
+<%= form_tag(filter_list_documents_path, method: 'get', remote: true) do %>
+    <% ListDocumentsHelper::TAGS.each do |tag_name| %>
+        <div>
+        <%= check_box_tag "#{tag_name}_checkbox".to_sym, 1, false, onclick: "$(\"##{tag_name}Properties\")[this.checked ? 'show' : 'hide']();" %>
+        <%= label_tag("#{tag_name}_checkbox", "Include #{tag_name}s?") %>
+        <div id="<%=tag_name%>Properties" style="display: none;">
+          <ul>
+            <li><%= label_tag("#{tag_name}s_from", 'от', class: 'labelForParameter') %>
+              <div><%= text_field_tag("#{tag_name}s_from", 0, class: 'textFieldParameter') %></div></li>
+            <li><%= label_tag("#{tag_name}s_to", 'до', class: 'labelForParameter') %>
+              <div><%= text_field_tag("#{tag_name}s__to", nil, class: 'textFieldParameter') %></div></li>
+          </ul>
+        </div>
+        </div>
+    <% end %>
+    <div id="btnSubmit">
+      <%= submit_tag 'Filter!' %>
+    </div>
+<% end %>
+<table>
+  <tr>
+    <th>Download</th>
+    <th>Path to document</th>
+    <th>Tags</th>
+    <th>Actions</th>
+  </tr>
+  <tbody id="listElements">
+    <%= render @list_documents %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New List document', new_list_document_path %>

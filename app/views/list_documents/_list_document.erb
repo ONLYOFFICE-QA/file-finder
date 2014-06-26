@@ -1,0 +1,22 @@
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  <td><%= link_to image_tag('download_button_animated.gif', class: 'list_item_image'), download_list_document_path(list_document), target: '_blank' %></td>
+  <td><p><%= list_document.attributes[:path] %></p></td>
+  <td>
+    <ul>
+      <li>Параграфов: <%= list_document.attributes['tags']['paragraphs'] %></li>
+      <li>Таблиц: <%= list_document.attributes['tags']['tables'] %></li>
+      <li>Картинок: <%= list_document.attributes['tags']['images'] %></li>
+      <li>Автофигур: <%= list_document.attributes['tags']['shapes'] %></li>
+      <li>Диаграмм: <%= list_document.attributes['tags']['charts'] %></li>
+      <li>Группированых автофигур: <%= list_document.attributes['tags']['group_shapes'] %></li>
+      <li>Колонок: <%= list_document.attributes['tags']['columns'] %></li>
+      <li>Секций: <%= list_document.attributes['tags']['sections'] %></li>
+      <li>Формулы: <%= list_document.attributes['tags']['formulas'] %></li>
+    </ul>
+  </td>
+  <td>
+    <%= link_to 'Show', list_document %>
+    <%= link_to 'Edit', edit_list_document_path(list_document) %>
+    <%= link_to 'Destroy', list_document, method: :delete, data: {confirm: 'Are you sure?'} %>
+  </td>
+</tr>
