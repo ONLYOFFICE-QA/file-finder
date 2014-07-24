@@ -1,8 +1,10 @@
+require_relative '../../../SharedFunctional/TestrailAPI/API2.0/Testrail'
 require 'teamlab'
+require 'rexml/document'
 
 class ListDocumentsController < ApplicationController
   include ListDocumentsHelper
-  before_action :set_list_document, only: [:show, :edit, :update, :destroy, :download, :upload_to_teamlab]
+  before_action :set_list_document, only: [:show, :edit, :update, :destroy, :download, :upload_to_teamlab, :open_on_testrail]
   before_action :authenticate_to_teamlab, only: [:upload_to_teamlab]
 
   # GET /list_documents
@@ -14,7 +16,11 @@ class ListDocumentsController < ApplicationController
   # GET /list_documents/1
   # GET /list_documents/1.json
   def show
-    @document = ListDocument.find(params[:id]).document
+    @document = ListDocument.find(params[:id]).document['structure']
+    respond_to do |format|
+      format.html
+      format.xml { render xml: @document }
+    end
   end
 
   # GET /list_documents/new
@@ -84,6 +90,13 @@ class ListDocumentsController < ApplicationController
     end
   end
 
+  def open_on_testrail
+    case_id = Testrail2.new.project(68).suite(16976).section(35122).case(@list_document.attributes['path']).id
+    respond_to do |format|
+      format.html { redirect_to "http://tm-testrail.no-ip.org/testrail/index.php?/cases/results/#{case_id}"}
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_list_document
@@ -97,9 +110,9 @@ class ListDocumentsController < ApplicationController
 
     def authenticate_to_teamlab
       Teamlab.configure do |config|
-        config.server = TM_PORTAL
-        config.username = USERNAME
-        config.password = PASSWORD
+        config.server = TEAMLAB[:server]
+        config.username = TEAMLAB[:username]
+        config.password = TEAMLAB[:password]
       end
     end
 end

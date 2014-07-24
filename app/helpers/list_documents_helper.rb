@@ -1,8 +1,6 @@
 module ListDocumentsHelper
   TAGS = %w(paragraph table image shape chart group_shape column section formula)
-  TM_PORTAL = 'https://testinfo.teamlab.info'
-  USERNAME = 'alexeysemin88@gmail.com'
-  PASSWORD = '123456'
+  TEAMLAB = {server: 'https://testinfo.teamlab.info', username: 'alexeysemin88@gmail.com', password: '123456'}
 
   def filter_documents(params)
     @list_documents = ListDocument.all.to_a
@@ -18,7 +16,7 @@ module ListDocumentsHelper
     TAGS.each do |element|
       if params["#{element}_checkbox".to_sym].to_i == 1
         @parsed_params["#{element}s".to_sym] = {from: params["#{element}s_from"].to_i}
-        @parsed_params["#{element}s".to_sym][:to] = params["#{element}s_to"].to_i if params["#{element}s_to"]
+        @parsed_params["#{element}s".to_sym][:to] = params["#{element}s_to"].to_i if correct_value?(params["#{element}s_to"])
       end
     end
   end
@@ -27,8 +25,12 @@ module ListDocumentsHelper
     result = true
     @parsed_params.each do |key, value|
       list_document_value = list_document.attributes['tags'][key]
-      result &&= (list_document_value >= value[:from]) && (value.has_key?(:to) ? (list_document_value <= value) : true)
+      result &&= list_document_value >= value[:from] && (value.has_key?(:to) ? (list_document_value <= value[:to]) : true)
     end
     result
+  end
+
+  def correct_value?(param)
+    param != '' && param
   end
 end

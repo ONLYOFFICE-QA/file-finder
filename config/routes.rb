@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     member do
       get 'download'
       get 'upload_to_teamlab'
+      get 'open_on_testrail'
     end
   end
 

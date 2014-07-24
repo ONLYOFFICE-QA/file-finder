@@ -2,9 +2,10 @@
   <td>
     <%= link_to image_tag('docx.png', class: 'listItemImage'), download_list_document_path(list_document), title: 'Download document', rel: 'tooltip', target: '_blank' %>
     <%= link_to image_tag('TM_logo.png', class: 'listItemImage'), upload_to_teamlab_list_document_path(list_document), title: 'Upload to TeamLab.info', rel: 'tooltip', target: '_blank' %>
+    <%= link_to image_tag('testrail.png', class: 'listItemImage'), open_on_testrail_list_document_path(list_document), title: 'Open Testrail results', rel: 'tooltip', target: '_blank' %>
   </td>
   <td>
-    <p><%= list_document.attributes[:path] %></p>
+    <p><%= link_to list_document.attributes[:path], list_document %></p>
   </td>
   <td>
     <ul>
@@ -16,12 +17,7 @@
       <li>Группированых автофигур: <%= list_document.attributes['tags']['group_shapes'] %></li>
       <li>Колонок: <%= list_document.attributes['tags']['columns'] %></li>
       <li>Секций: <%= list_document.attributes['tags']['sections'] %></li>
-      <li>Формулы: <%= list_document.attributes['tags']['formulas'] %></li>
+      <li>Формул: <%= list_document.attributes['tags']['formulas'] %></li>
     </ul>
-  </td>
-  <td>
-    <%= link_to 'Show', list_document %>
-    <%= link_to 'Edit', edit_list_document_path(list_document) %>
-    <%= link_to 'Destroy', list_document, method: :delete, data: {confirm: 'Are you sure?'} %>
   </td>
 </tr>
