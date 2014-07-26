@@ -37,10 +37,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list_documents_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="list_documents_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/list_documents_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="45" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.34246576" vertical-offset="330" max-vertical-offset="1860">
+            <state line="60" column="9" selection-start="1904" selection-end="1904" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1860">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_presentations_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers/list_presentations_helper.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="47" selection-start="1216" selection-end="1216" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_spreadsheets_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/list_spreadsheets_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1845">
               <folding />
             </state>
           </provider>
@@ -906,7 +924,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/list_documents_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="45" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.34246576" vertical-offset="330" max-vertical-offset="1860">
+        <state line="60" column="9" selection-start="1904" selection-end="1904" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1860">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/list_presentations_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="47" selection-start="1216" selection-end="1216" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/list_spreadsheets_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1845">
           <folding />
         </state>
       </provider>
