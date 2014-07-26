@@ -37,10 +37,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list_documents_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="list_documents_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers/list_documents_helper.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="50" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_documents_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/list_documents_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="9" selection-start="792" selection-end="792" vertical-scroll-proportion="0.0" vertical-offset="855" max-vertical-offset="1860">
+            <state line="24" column="0" selection-start="754" selection-end="754" vertical-scroll-proportion="0.6271777" vertical-offset="0" max-vertical-offset="1860">
               <folding />
             </state>
           </provider>
@@ -73,10 +82,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list_presentations_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="list_presentations_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/list_presentations_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="66" selection-start="2865" selection-end="2865" vertical-scroll-proportion="2.3519163" vertical-offset="0" max-vertical-offset="1815">
+            <state line="33" column="12" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1815">
               <folding />
             </state>
           </provider>
@@ -786,13 +795,6 @@
         <state line="17" column="0" selection-start="468" selection-end="468" vertical-scroll-proportion="0.46875" vertical-offset="0" max-vertical-offset="544" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/list_documents_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="50" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/list_presentations/filter.js.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="21" selection-start="66" selection-end="66" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="135" />
@@ -918,23 +920,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/list_spreadsheets_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="66" selection-start="2917" selection-end="2917" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1845">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../SharedFunctional/TestrailAPI/API2.0/TestrailSuite.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="79" column="0" selection-start="3215" selection-end="3215" vertical-scroll-proportion="0.4402852" vertical-offset="938" max-vertical-offset="1695">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/list_documents_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="9" selection-start="792" selection-end="792" vertical-scroll-proportion="0.0" vertical-offset="855" max-vertical-offset="1860">
           <folding />
         </state>
       </provider>
@@ -946,9 +934,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/list_documents_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="50" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/list_presentations_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="66" selection-start="2865" selection-end="2865" vertical-scroll-proportion="2.3519163" vertical-offset="0" max-vertical-offset="1815">
+        <state line="33" column="12" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1815">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/list_spreadsheets_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="66" selection-start="2917" selection-end="2917" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1845">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/list_documents_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="754" selection-end="754" vertical-scroll-proportion="0.6271777" vertical-offset="0" max-vertical-offset="1860">
           <folding />
         </state>
       </provider>
