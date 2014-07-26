@@ -14,6 +14,30 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :list_spreadsheets do
+    collection do
+      get 'filter'
+    end
+
+    member do
+      get 'download'
+      get 'upload_to_teamlab'
+      get 'open_on_testrail'
+    end
+  end
+
+  resources :list_presentations do
+    collection do
+      get 'filter'
+    end
+
+    member do
+      get 'download'
+      get 'upload_to_teamlab'
+      get 'open_on_testrail'
+    end
+  end
+
   #get 'list_documents/download/:id', to: 'list_documents#download', as: 'download'
   #get 'list_documents/filter/:action', to: 'list_documents#filter', as: 'filter'
   get 'list_documents/index'

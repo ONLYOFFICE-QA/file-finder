@@ -1,0 +1,25 @@
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  <td>
+    <%= link_to image_tag('pptx.png', class: 'listItemImage'), download_list_presentation_path(list_presentation), title: 'Download presentation', rel: 'tooltip', target: '_blank' %>
+    <%= link_to image_tag('TM_logo.png', class: 'listItemImage'), upload_to_teamlab_list_presentation_path(list_presentation), title: 'Upload to TeamLab.info', rel: 'tooltip', target: '_blank' %>
+    <%= link_to image_tag('testrail.png', class: 'listItemImage'), open_on_testrail_list_presentation_path(list_presentation), title: 'Open Testrail results', rel: 'tooltip', target: '_blank' %>
+  </td>
+  <td>
+    <p><%= link_to list_presentation.attributes[:path], list_presentation %></p>
+  </td>
+  <td>
+    <ul>
+      <li>Слайдов: <%= list_presentation.attributes['tags']['slides'] %></li>
+      <li>Ссылок: <%= list_presentation.attributes['tags']['hyperlinks'] %></li>
+      <li>Картинок: <%= list_presentation.attributes['tags']['images'] %></li>
+      <li>Автофигур: <%= list_presentation.attributes['tags']['shapes'] %></li>
+      <li>Диаграмм: <%= list_presentation.attributes['tags']['charts'] %></li>
+      <li>Таблиц: <%= list_presentation.attributes['tags']['tables'] %></li>
+      <li>Группированых автофигур: <%= list_presentation.attributes['tags']['group_shapes'] %></li>
+      <li>Формул: <%= list_presentation.attributes['tags']['formulas'] %></li>
+      <li>Аудио/Видео: <%= list_presentation.attributes['tags']['medias'] %></li>
+      <li>Эффекты перехода: <%= list_presentation.attributes['tags']['transitions'] %></li>
+      <li>Анимация: <%= list_presentation.attributes['tags']['animations'] %></li>
+    </ul>
+  </td>
+</tr>

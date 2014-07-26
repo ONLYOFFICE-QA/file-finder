@@ -1,0 +1,28 @@
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  <td>
+    <%= link_to image_tag('xlsx.png', class: 'listItemImage'), download_list_spreadsheet_path(list_spreadsheet), title: 'Download spreadsheet', rel: 'tooltip', target: '_blank' %>
+    <%= link_to image_tag('TM_logo.png', class: 'listItemImage'), upload_to_teamlab_list_spreadsheet_path(list_spreadsheet), title: 'Upload to TeamLab.info', rel: 'tooltip', target: '_blank' %>
+    <%= link_to image_tag('testrail.png', class: 'listItemImage'), open_on_testrail_list_spreadsheet_path(list_spreadsheet), title: 'Open Testrail results', rel: 'tooltip', target: '_blank' %>
+  </td>
+  <td>
+    <p><%= link_to list_spreadsheet.attributes[:path], list_spreadsheet %></p>
+  </td>
+  <td>
+    <ul>
+      <li>Листов: <%= list_spreadsheet.attributes['tags']['worksheets'] %></li>
+      <li>Объединенных ячеек: <%= list_spreadsheet.attributes['tags']['merged_cells'] %></li>
+      <li>Ссылок: <%= list_spreadsheet.attributes['tags']['hyperlinks'] %></li>
+      <li>Картинок: <%= list_spreadsheet.attributes['tags']['images'] %></li>
+      <li>Автофигур: <%= list_spreadsheet.attributes['tags']['shapes'] %></li>
+      <li>Диаграмм: <%= list_spreadsheet.attributes['tags']['charts'] %></li>
+      <li>Группированых автофигур: <%= list_spreadsheet.attributes['tags']['group_shapes'] %></li>
+      <li>Колонок: <%= list_spreadsheet.attributes['tags']['columns'] %></li>
+      <li>Автофильтров: <%= list_spreadsheet.attributes['tags']['autofilters'] %></li>
+      <li>Форматированных таблиц: <%= list_spreadsheet.attributes['tags']['formatted_tables'] %></li>
+      <li>Скрытых строк: <%= list_spreadsheet.attributes['tags']['hidden_rows'] %></li>
+      <li>Комментариев: <%= list_spreadsheet.attributes['tags']['comments'] %></li>
+      <li>Формул: <%= list_spreadsheet.attributes['tags']['formulas'] %></li>
+      <li>Закрепенных областей: <%= list_spreadsheet.attributes['tags']['frozen_ranges'] %></li>
+    </ul>
+  </td>
+</tr>

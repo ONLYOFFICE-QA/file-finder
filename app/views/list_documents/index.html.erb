@@ -1,3 +1,10 @@
+<div class="tabs">
+  <ul class="tab-links">
+    <li><%= link_to 'Documents', list_documents_path %></li>
+    <li><%= link_to 'Spreadsheets', list_spreadsheets_path %></li>
+    <li><%= link_to 'Presentations', list_presentations_path %></li>
+  </ul>
+</div>
 <h1>Documents list</h1>
 
 <%= form_tag(filter_list_documents_path, method: 'get', remote: true) do %>
@@ -25,8 +32,8 @@
     <th>Path to document</th>
     <th>Tags</th>
   </tr>
-  <tbody id="listElements">
-  <%= render @list_documents %>
+  <tbody id="listDocuments">
+    <%= render @list_documents %>
   </tbody>
 </table>
 

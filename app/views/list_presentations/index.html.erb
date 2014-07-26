@@ -1,0 +1,40 @@
+<div class="tabs">
+  <ul class="tab-links">
+    <li><%= link_to 'Documents', list_documents_path %></li>
+    <li><%= link_to 'Spreadsheets', list_spreadsheets_path %></li>
+    <li><%= link_to 'Presentations', list_presentations_path %></li>
+  </ul>
+</div>
+<h1>Presentations list</h1>
+
+<%= form_tag(filter_list_presentations_path, method: 'get', remote: true) do %>
+    <% ListPresentationsHelper::TAGS.each do |tag_name| %>
+        <div>
+          <%= check_box_tag "#{tag_name}_checkbox".to_sym, 1, false, onclick: "$(\"##{tag_name}Properties\")[this.checked ? 'show' : 'hide']();" %>
+          <%= label_tag("#{tag_name}_checkbox", "Include #{tag_name}s?") %>
+          <div id="<%=tag_name%>Properties" style="display: none;">
+            <ul>
+              <li><%= label_tag("#{tag_name}s_from", 'от', class: 'labelForParameter') %>
+                <div><%= text_field_tag("#{tag_name}s_from", 1, class: 'textFieldParameter') %></div></li>
+              <li><%= label_tag("#{tag_name}s_to", 'до', class: 'labelForParameter') %>
+                <div><%= text_field_tag("#{tag_name}s_to", nil, class: 'textFieldParameter') %></div></li>
+            </ul>
+          </div>
+        </div>
+    <% end %>
+    <div id="btnSubmit">
+      <%= submit_tag 'Filter!' %>
+    </div>
+<% end %>
+<table>
+  <tr>
+    <th>Download</th>
+    <th>Path to presentation</th>
+    <th>Tags</th>
+  </tr>
+  <tbody id="listPresentations">
+  <%= render @list_presentations %>
+  </tbody>
+</table>
+
+<br>
