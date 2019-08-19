@@ -97,7 +97,7 @@ GEM
     multi_json (1.13.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    net-ping (1.7.2)
+    net-ping (2.0.6)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     optionable (0.2.0)
