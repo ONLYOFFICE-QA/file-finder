@@ -6,7 +6,7 @@ gem 'rails', '4.2.11.1'
 
 gem 'bson_ext'
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
-gem 'teamlab', '~> 0.3.1'
+gem 'teamlab', '~> 0.6'
 gem 'net-ping'
 gem 'zip'
 # Use SCSS for stylesheets
